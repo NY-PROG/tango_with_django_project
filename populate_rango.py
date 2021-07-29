@@ -8,41 +8,40 @@ django.setup()
 from rango.models import Category, Page
 
 
-
 def populate():
     python_pages = [
         {'title': 'Official Python Tutorial',
          'url': 'http://docs.python.org/3/tutorial/',
-         'views': 0, },
+         'views': 114, },
         {'title': 'How to Think like a Computer Scientist',
          'url': 'http://www.greenteapress.com/thinkpython/',
-         'views': 0},
+         'views': 53},
         {'title': 'Learn Python in 10 Minutes',
          'url': 'http://www.korokithakis.net/tutorials/python/',
-         'views': 0}]
+         'views': 20}]
 
     django_pages = [
         {'title': 'Official Django Tutorial',
          'url': 'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-         'views': 0},
+         'views': 32},
         {'title': 'Django Rocks',
          'url': 'http://www.djangorocks.com/',
-         'views': 0},
+         'views': 12},
         {'title': 'How to Tango with Django',
          'url': 'http://www.tangowithdjango.com/',
-         'views': 0}]
+         'views': 1258}]
 
     other_pages = [
         {'title': 'Bottle',
          'url': 'http://bottlepy.org/docs/dev/',
-         'views': 0},
+         'views': 54},
         {'title': 'Flask',
          'url': 'http://flask.pocoo.org',
-         'views': 0}]
+         'views': 64}]
 
-    cats = {'Python': {'pages': python_pages, 'views': 0, 'likes': 0},
-            'Django': {'pages': django_pages, 'views': 0, 'likes': 0},
-            'Other Frameworks': {'pages': other_pages, 'views': 0, 'likes': 0}}
+    cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
+            'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
+            'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16}}
 
     for cat, cat_data in cats.items():
         c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
@@ -68,7 +67,6 @@ def add_cat(name, views=0, likes=0):
     c.likes = likes
     c.save()
     return c
-
 
 
 if __name__ == '__main__':
