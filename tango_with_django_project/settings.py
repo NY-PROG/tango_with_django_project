@@ -14,20 +14,14 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
-SECRET_KEY = 'sq_z*m=yr)aiu$9lyzf@)&-!o(yjs=)9igwhuco$d7@a3jed=@'
+SECRET_KEY = 'nbor5(nmohqb+r95l0&&rveiea07_9r5%75mv51v(wn@@r#y@0'
 
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-LOGIN_URL = 'rango:login'
-
 
 
 INSTALLED_APPS = [
@@ -55,7 +49,8 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,7 +58,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
             ],
         },
     },
@@ -72,14 +66,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -110,9 +102,4 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR, ]
-
-MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/media/'
