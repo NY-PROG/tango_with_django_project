@@ -7,4 +7,4 @@ def about(request):
     return HttpResponse("Rango says here is the about page. <a href='/rango/'>Index</a>")
 
 def index(request):
-    return HttpResponse("Hello World! <a href='/rango/about/'>About</a>")
+    return HttpResponse("Rango says hey there partner! <a href='/rango/about/'>About</a>")
