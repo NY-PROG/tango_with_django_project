@@ -19,9 +19,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
-
-SECRET_KEY = 'nbor5(nmohqb+r95l0&&rveiea07_9r5%75mv51v(wn@@r#y@0'
-
+SECRET_KEY = 'sq_z*m=yr)aiu$9lyzf@)&-!o(yjs=)9igwhuco$d7@a3jed=@'
 
 DEBUG = True
 
@@ -63,7 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-'django.template.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -72,15 +70,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 
@@ -101,7 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -111,8 +105,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
 
 
 STATIC_URL = '/static/'
