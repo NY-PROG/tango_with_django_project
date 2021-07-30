@@ -16,12 +16,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+
 SECRET_KEY = 'nbor5(nmohqb+r95l0&&rveiea07_9r5%75mv51v(wn@@r#y@0'
 
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
 
 
 INSTALLED_APPS = [
@@ -66,12 +69,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -91,6 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -100,6 +108,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
 
 
 STATIC_URL = '/static/'
